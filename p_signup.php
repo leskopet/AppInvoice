@@ -36,7 +36,7 @@ if (isset($_POST['sumbit'])) {
     }
     else {
         $action = "signup";
-        $result = sendRESTRequest($action, $data);
+        $result = sendBackendRequest($action, $data);
 
         if($result['status'] == 'success') {
             $_SESSION['AppInvoice_user'] = $result['data'][0]['email'];

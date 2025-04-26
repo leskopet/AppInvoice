@@ -291,7 +291,7 @@ if(!empty($user['email'])) {
     $data = array(
         "email" => $user['email']
     );
-    $result = sendRESTRequest($action, $data);
+    $result = sendBackendRequest($action, $data);
     if(!empty($result['data'])) { $supliers = $result['data']; }
 }
 
@@ -323,7 +323,7 @@ if(isset($_GET['id'])) {
     $data = array(
         "id" => $_GET['id']
     );
-    $result = sendRESTRequest($action, $data);
+    $result = sendBackendRequest($action, $data);
     if(empty($result['data'])) {
         $_SESSION['AppInvoice_invoice'] = $form;
         header("Location: p_invoice.php?page=invoice");
@@ -346,7 +346,7 @@ elseif (isset($_GET['copy'])) {
     $data = array(
         "id" => $_GET['copy']
     );
-    $result = sendRESTRequest($action, $data);
+    $result = sendBackendRequest($action, $data);
     if(empty($result['data'])) {
         $_SESSION['AppInvoice_invoice'] = $form;
         header("Location: p_invoice.php?page=invoice");
@@ -380,7 +380,7 @@ elseif (isset($_GET['customer'])) {
     $data = array(
         "id" => $_GET['customer']
     );
-    $result = sendRESTRequest($action, $data);
+    $result = sendBackendRequest($action, $data);
     if(empty($result['data']) || $result['status'] != 'success') {
         $_SESSION['AppInvoice_invoice'] = $form;
         header("Location: p_invoice.php?page=invoice");
@@ -402,7 +402,7 @@ if (isset($_POST['submitAddInvoice'])) {
 
     // request to server
     if(empty($data['allert'])) {
-        $result = sendRESTRequest($action, $data);
+        $result = sendBackendRequest($action, $data);
         if($result['status'] == 'success') {
             header("Location: p_invoice.php?page=invoice&id=" . $result['data'][0]['id']);
             exit();
@@ -424,7 +424,7 @@ if (isset($_POST['submitUpdateInvoice'])) {
 
     // request to server
     if(empty($data['allert'])) {
-        $result = sendRESTRequest($action, $data);
+        $result = sendBackendRequest($action, $data);
         if($result['status'] == 'success') {
             header("Location: p_invoice.php?page=invoice&id=" . $data['id']);
             exit();
@@ -448,7 +448,7 @@ if (isset($_POST['submitDeleteInvoice'])) {
         $data = array(
             "id" => $_POST['id']
         );
-        $result = sendRESTRequest($action, $data);
+        $result = sendBackendRequest($action, $data);
         if($result['status'] == 'success') {
             header("Location: p_invoice.php?page=invoice");
             exit();

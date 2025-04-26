@@ -18,7 +18,7 @@ if (isset($_GET['page'])) {
         $data = array(
             "email" => $user['email']
         );
-        $result = sendRESTRequest($action, $data);
+        $result = sendBackendRequest($action, $data);
         $invoices = $result['data'];
     }
     else if ($page == 'customers') {
@@ -26,7 +26,7 @@ if (isset($_GET['page'])) {
         $data = array(
             "email" => $user['email']
         );
-        $result = sendRESTRequest($action, $data);
+        $result = sendBackendRequest($action, $data);
         $customers = $result['data'];
         for ($i=0; $i < count($customers); $i++) { 
             $customers[$i]['order_number'] = $i+1;
@@ -51,7 +51,7 @@ if (isset($_POST['action'])) {
                 "id" => $_POST['id'],
                 "status" => $_POST['status']
             );
-            $result = sendRESTRequest($action, $data);
+            $result = sendBackendRequest($action, $data);
             if($result['status'] == 'success') {
                 header("Location: p_lists.php?page=invoices");
                 exit();

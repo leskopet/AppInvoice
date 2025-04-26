@@ -4,7 +4,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once __DIR__ . '/Functions/RESTConnect.php';
+require_once __DIR__ . '/Functions/BackendConnect.php';
 
 $server = 'http://localhost/AppInvoice';
 
@@ -14,7 +14,7 @@ session_start();
 if (!isset($_SESSION['AppInvoice_device']) || empty($_SESSION['AppInvoice_device'])) {
     $action = "registerdevice";
     $data = "";
-    $result = sendRESTRequest($action, $data);
+    $result = sendBackendRequest($action, $data);
     if($result['status'] == 'success') {
         $_SESSION['AppInvoice_device'] = $result['data']['device'];
     }
@@ -45,7 +45,7 @@ $request = array("param" => $params);
 
 // create post request
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $server . "/REST/server.php");
+curl_setopt($ch, CURLOPT_URL, $server . "/Backend/server.php");
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($request));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

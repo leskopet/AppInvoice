@@ -30,7 +30,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $form = $data;
     }
     else {
-        $result = sendRESTRequest($action, $data);
+        $result = sendBackendRequest($action, $data);
 
         if($result['status'] == 'success') {
             $_SESSION['AppInvoice_user'] = $result['data'][0]['email'];

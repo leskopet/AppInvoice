@@ -4,7 +4,7 @@
 // error_reporting(E_ALL);
 // ini_set('display_errors', 1);
 
-require_once __DIR__ . '/../Functions/RESTConnect.php';
+require_once __DIR__ . '/../Functions/BackendConnect.php';
 
 session_start();
 
@@ -18,7 +18,7 @@ if (!isset($_SESSION['AppInvoice_device']) || empty($_SESSION['AppInvoice_device
     else {
         $action = "registerdevice";
         $data = "";
-        $result = sendRESTRequest($action, $data);
+        $result = sendBackendRequest($action, $data);
         if($result['status'] == 'success') {
             $_SESSION['AppInvoice_device'] = $result['data']['device'];
             setcookie("AppInvoice_device", $result['data']['device'], time() + (86400 * 30), "/");
@@ -43,7 +43,7 @@ if (isset($_SESSION['AppInvoice_user']) && !empty($_SESSION['AppInvoice_user']))
         "device" => $device,
         "email" => $_SESSION['AppInvoice_user']
     );
-    $result = sendRESTRequest($action, $data);
+    $result = sendBackendRequest($action, $data);
     if($result['status'] == 'success') {
         $_SESSION['AppInvoice_user'] = $result['data'][0]['email'];
         setcookie("AppInvoice_user", $result['data'][0]['email'], time() + (86400 * 30), "/");

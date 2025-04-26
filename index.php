@@ -31,7 +31,7 @@ $statistics = $clr_statistics;
 if(!empty($user['email'])) {
     $action = "getstatistics";
     $data = array();
-    $result = sendRESTRequest($action, $data);
+    $result = sendBackendRequest($action, $data);
     
     if(isset($result['status']) && $result['status'] == 'success' && !empty($result['data'])) {
         $statistics = $result['data'];

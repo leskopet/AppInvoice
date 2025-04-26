@@ -8,7 +8,7 @@ if(!empty($user['email'])) {
         "device" => $device,
         "email" => $user['email']
     );
-    $result = sendRESTRequest($action, $data);
+    $result = sendBackendRequest($action, $data);
     if($result['status'] == 'success') {
         unset($_SESSION['AppInvoice_user']);
         setcookie('AppInvoice_device', '', time() - 3600);

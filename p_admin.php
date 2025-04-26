@@ -39,7 +39,7 @@ if (isset($_POST['submitRequest'])) {
     $request = array("param" => $form['request']);
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "http://localhost/AppInvoice" . "/REST/server.php");
+    curl_setopt($ch, CURLOPT_URL, "http://localhost/AppInvoice" . "/Backend/server.php");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($request));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

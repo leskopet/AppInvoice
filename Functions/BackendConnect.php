@@ -1,6 +1,6 @@
 <?php
 
-function sendRESTRequest($action, $data, $output_log = false) {
+function sendBackendRequest($action, $data, $output_log = false) {
     $server = 'http://localhost/AppInvoice';
 
     $auth = array(
@@ -32,7 +32,7 @@ function sendRESTRequest($action, $data, $output_log = false) {
 
     // create post request
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $server . "/REST/server.php");
+    curl_setopt($ch, CURLOPT_URL, $server . "/Backend/server.php");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($request));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

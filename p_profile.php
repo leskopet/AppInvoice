@@ -87,7 +87,7 @@ if (isset($_GET['page'])) {
         $data = array(
             "email" => $user['email']
         );
-        $result = sendRESTRequest($action, $data);
+        $result = sendBackendRequest($action, $data);
         if(empty($result['data'])) { 
             $form = $empty_form;
             $form['phone'] = $user['phone'];
@@ -119,7 +119,7 @@ if (isset($_POST['submitUser'])) {
     }
     else {
         $action = "updateuser";
-        $result = sendRESTRequest($action, $data);
+        $result = sendBackendRequest($action, $data);
         if($result['status'] == 'success') {
             $_SESSION['AppInvoice_user'] = $data['email'];
             setcookie("AppInvoice_user", $data['email'], time() + (86400 * 30), "/");
@@ -151,7 +151,7 @@ if (isset($_POST['submitCompany'])) {
     }
     else {
         $action = "updatecompany";
-        $result = sendRESTRequest($action, $data);
+        $result = sendBackendRequest($action, $data);
         if($result['status'] == 'success') {
             header("Location: p_profile.php?page=company");
             exit();
@@ -181,7 +181,7 @@ if (isset($_POST['submitCompany'])) {
 }
 if (isset($_POST['deactivate'])) {
     $action = "deactivateuser";
-    $result = sendRESTRequest($action,array());
+    $result = sendBackendRequest($action,array());
     if($result['status'] == 'success' && $result['data'] == true) {
         $_SESSION['AppInvoice_user'] = "";
         setcookie("AppInvoice_user", "", time() - 3600, "/");
