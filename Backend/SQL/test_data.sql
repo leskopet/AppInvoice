@@ -15,10 +15,10 @@ INSERT INTO `AppInvoice`.`Address` (`id`, `state`, `region`, `city`, `street`, `
     (7, 'Slovensko', NULL, 'Martin', 'Hlavná', '1', '82101');
 
 INSERT INTO `AppInvoice`.`User` (`id`, `fname`, `lname`, `email`, `phone`, `description`, `address`, `role`, `tag`, `password`) VALUES
-    (1, 'Admin', 'Admin', 'admin@appinvoice.sk', '+421123456789', '', 2, '9', '0', '$2y$10$uxc2/nFd86hZhWgtZOJnB.TumsP96M.ObquKLXkCtHbItGhcvA1Qm'),
-    (2, 'User', 'User', 'user@appinvoice.sk', '+421123456789', '', 1, '0', '0', '$2y$10$3It6i.h6o.gvcdQCjuPOdOq3kDle11gSxlQFuniJ61e/l5b4IXKV6'),
-    (3, 'Pouzivatel', '1', 'pouzivatel@appinvoice.sk', '+421123456789', '', 3, '0', '0', '$2y$10$ptuTUbF5pa1ohJiLxWjJhuKv7El5p4Fsdqls6p6J.wtHHoQRFs5cK'),
-    (4, 'Suplier', '1', 'suplier@appinvoice.sk', '+421123456789', '', 1, '0', '0', '$2y$10$APNvhwG0IAmOpzey3wT18e0EeEa1JW8WqA5mlr2hZVrauysw8QOaS');
+    (1, 'Admin', 'Admin', 'admin@appinvoice.sk', '+421123456789', '', 2, '9', '0', '$2y$10$uxc2/nFd86hZhWgtZOJnB.TumsP96M.ObquKLXkCtHbItGhcvA1Qm'),         -- password: admin
+    (2, 'User', 'User', 'user@appinvoice.sk', '+421123456789', '', 1, '0', '0', '$2y$10$3It6i.h6o.gvcdQCjuPOdOq3kDle11gSxlQFuniJ61e/l5b4IXKV6'),            -- password: password
+    (3, 'Pouzivatel', '1', 'pouzivatel@appinvoice.sk', '+421123456789', '', 3, '0', '0', '$2y$10$ptuTUbF5pa1ohJiLxWjJhuKv7El5p4Fsdqls6p6J.wtHHoQRFs5cK'),   -- password: heslo
+    (4, 'Suplier', '1', 'suplier@appinvoice.sk', '+421123456789', '', 1, '0', '0', '$2y$10$APNvhwG0IAmOpzey3wT18e0EeEa1JW8WqA5mlr2hZVrauysw8QOaS');         -- password: password
 
 INSERT INTO `AppInvoice`.`Auto_login` (`id`, `user`, `device`) VALUES
     (1, 2, '2b6a34efeb27a2d5dd3f9bdcf8bf2766871da7c6b413d7bc282b1ac3c5bf650e'),
@@ -41,18 +41,18 @@ INSERT INTO `AppInvoice`.`Company` (`id`, `user`, `title`, `description`, `email
 INSERT INTO `AppInvoice`.`Invoice` (`id`, `suplier`, `customer`, `title`, `description`, `total`, `vat`, `total_vat`, `status`, `created`, `suplied`, `due_date`) VALUES
     (1,  1, 5,  '2025001', '', 1000, 230, 1230, 2, '2025-01-01', '2025-01-01', '2025-01-15'),
     (2,  1, 6,  '2025002', '', 100,  23,  123,  2, '2025-02-04', '2025-02-04', '2025-02-18'),
-    (3,  1, 7,  '2025003', '', 1000, 230, 1230, 2, '2025-03-01', '2025-03-01', '2025-03-15'),
-    (4,  1, 8,  '2025004', '', 100,  23,  123,  2, '2025-04-03', '2025-04-03', '2025-04-17'),
-    (5,  1, 9,  '2025005', '', 1000, 230, 1230, 2, '2025-05-02', '2025-05-02', '2025-05-16'),
+    (3,  1, 7,  '2025003', '', 1000, 230, 1230, 3, '2025-03-01', '2025-03-01', '2025-03-15'),
+    (4,  1, 8,  '2025004', '', 100,  23,  123,  1, '2025-04-30', '2025-04-30', '2025-05-14'),
+    (5,  1, 9,  '2025005', '', 1000, 230, 1230, 0, '2025-05-02', '2025-05-02', '2025-05-16'),
     (6,  2, 10, '2025001', '', 100,  23,  123,  2, '2025-01-06', '2025-01-06', '2025-01-20'),
     (7,  2, 11, '2025002', '', 1000, 230, 1230, 2, '2025-02-05', '2025-02-05', '2025-02-19'),
     (8,  2, 5,  '2025003', '', 100,  23,  123,  2, '2025-03-01', '2025-03-01', '2025-03-15'),
     (9,  2, 6,  '2025004', '', 1000, 230, 1230, 2, '2025-04-04', '2025-04-04', '2025-04-18'),
     (10, 3, 7,  '2025001', '', 100,  23,  123,  2, '2025-01-01', '2025-01-01', '2025-01-15'),
     (11, 3, 8,  '2025002', '', 1000, 230, 1230, 2, '2025-03-03', '2025-03-03', '2025-03-17'),
-    (12, 3, 9,  '2025003', '', 100,  23,  123,  2, '2025-04-02', '2025-04-02', '2025-04-16'),
+    (12, 3, 9,  '2025003', '', 100,  23,  123,  1, '2025-04-02', '2025-04-02', '2025-04-16'),
     (13, 4, 10, '2025001', '', 1000, 230, 1230, 2, '2025-02-06', '2025-02-06', '2025-02-20'),
-    (14, 4, 11, '2025002', '', 100,  23,  123,  2, '2025-04-05', '2025-04-05', '2025-04-19');
+    (14, 4, 11, '2025002', '', 100,  23,  123,  1, '2025-04-05', '2025-04-05', '2025-04-19');
 
 INSERT INTO `AppInvoice`.`InvoiceItem` (`id`, `invoice`, `title`, `description`, `quantity`, `unit`, `price`) VALUES
     (1,  1,   'Item1', '', 3,   'kg',  100),
