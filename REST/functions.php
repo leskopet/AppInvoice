@@ -1,7 +1,5 @@
 <?php
 
-include_once ( __DIR__ . '/general_input_validation.php');
-
 /**
  * strip tags, htmlspecialchars and trim the sended value
  *
@@ -15,7 +13,6 @@ function filter_value($value)
     $value = strip_tags($value);
     $value = htmlspecialchars($value);
     $value = trim($value);
-    // $value = quotemeta($value);
     return $value;
 }
 

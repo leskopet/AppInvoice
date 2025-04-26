@@ -30,13 +30,13 @@ $preset_db = array(
                 "id", "user", "device"
             ),
             "Company" => array(
-                "id", "user", "title", "description", "ico", "dic", "icdph", "iban", "swift", "bank", "address"
+                "id", "user", "title", "description", "email", "phone", "ico", "dic", "icdph", "iban", "swift", "bank", "address"
             ),
             "Invoice" => array(
                 "id", "suplier", "customer", "title", "description", "total", "vat", "total_vat", "status", "created", "suplied", "due_date"
             ),
             "Invoice_item" => array(
-                "id", "invoice", "title", "description", "quantity", "price"
+                "id", "invoice", "title", "description", "quantity", "unit", "price"
             )
         )
     )

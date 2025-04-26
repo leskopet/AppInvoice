@@ -91,6 +91,3 @@ CREATE TABLE AppInvoice.Invoice_item (
     price DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (invoice) references AppInvoice.Invoice(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
-drop table `AppInvoice`.`Invoice`;
-alter table `AppInvoice`.`Company` add column `phone` VARCHAR(255) NOT NULL DEFAULT '';

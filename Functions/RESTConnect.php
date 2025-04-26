@@ -24,8 +24,7 @@ function sendRESTRequest($action, $data, $output_log = false) {
     $params = array(
         "auth" => $auth,
         "action" => $action,
-        "data" => $data,
-        "output_log" => $output_log
+        "data" => $data
     );
 
     $params = json_encode($params);

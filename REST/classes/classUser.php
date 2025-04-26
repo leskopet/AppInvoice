@@ -2,7 +2,6 @@
 
 include_once(__DIR__ . '/../db_tb/db_user.php');
 include_once(__DIR__ . '/../db_tb/db_auto_login.php');
-include_once(__DIR__ . '/../db_tb/db_renew_password.php');
 include_once(__DIR__ . '/../db_tb/db_device.php');
 include_once(__DIR__ . '/../db_tb/db_company.php');
 include_once(__DIR__ . '/../db_tb/db_address.php');
@@ -18,7 +17,6 @@ class Guest
 {
     use db_user_guest,
         db_auto_login_guest,
-        db_renew_password_guest,
         db_device_guest,
         db_company_guest,
         db_invoice_guest,
