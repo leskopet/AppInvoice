@@ -8,9 +8,23 @@
 <ol>
   <li>Install apache.</li>
   <li>Clone the git repository into your appache htdocs folder.</li>
-  <li>Create mysql database named "AppInvoice" on your database server.</li>
+  <li>Go to project folder "Backend/SQL/" and run db_structure.sql into database.</li>
   <li>(optional) Create user for database</li>
-  <li>Go to project folder "REST/SQL/" and run db_structure.sql into database.</li>
-  <li>Go to project file "REST/globals.php" and edit database connection credentials (dbname, username, password) in variable "$preset_db->AppInvoice"</li>
+  <li>Go to project file "Backend/globals.php" and edit database connection credentials (dbname, username, password) in variable "$preset_db->AppInvoice"</li>
 </ol>
 <p>After this you should be good to go.</p>
+
+<h1>Test data</h1>
+<p>For testing this application we provided the test data that can be imported in database. For importing the data go to project folder "Backend/SQL/" and run test_data.sql into database. After this you should have the test data in your database.</p>
+<p>To login as administrator use:</p>
+<ul>
+  <li>Username: admin@appinvoice.sk</li>
+  <li>Password: admin</li>
+</ul>
+<p>To login as common user use:</p>
+<ul>
+  <li>Username: user@appinvoice.sk</li>
+  <li>Password: password</li>
+</ul>
+
+<h2>Enjoy!</h2>
