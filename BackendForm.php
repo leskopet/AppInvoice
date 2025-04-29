@@ -5,8 +5,11 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 require_once __DIR__ . '/Functions/BackendConnect.php';
+include_once(__DIR__ . '/components/settings.php');
 
-$server = 'http://localhost/AppInvoice';
+if(!isset($server_url)) {
+    $server_url = 'http://localhost/AppInvoice';
+}
 
 session_start();
 
@@ -45,7 +48,7 @@ $request = array("param" => $params);
 
 // create post request
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $server . "/Backend/server.php");
+curl_setopt($ch, CURLOPT_URL, $server_url . "/Backend/server.php");
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($request));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

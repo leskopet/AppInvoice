@@ -15,10 +15,10 @@ INSERT INTO `AppInvoice`.`Address` (`id`, `state`, `region`, `city`, `street`, `
     (7, 'Slovensko', NULL, 'Martin', 'Hlavná', '1', '82101');
 
 INSERT INTO `AppInvoice`.`User` (`id`, `fname`, `lname`, `email`, `phone`, `description`, `address`, `role`, `tag`, `password`) VALUES
-    (1, 'Admin', 'Admin', 'admin@appinvoice.sk', '+421123456789', '', 2, '9', '0', '$2y$10$uxc2/nFd86hZhWgtZOJnB.TumsP96M.ObquKLXkCtHbItGhcvA1Qm'),         -- password: admin
-    (2, 'User', 'User', 'user@appinvoice.sk', '+421123456789', '', 1, '0', '0', '$2y$10$3It6i.h6o.gvcdQCjuPOdOq3kDle11gSxlQFuniJ61e/l5b4IXKV6'),            -- password: password
-    (3, 'Pouzivatel', '1', 'pouzivatel@appinvoice.sk', '+421123456789', '', 3, '0', '0', '$2y$10$ptuTUbF5pa1ohJiLxWjJhuKv7El5p4Fsdqls6p6J.wtHHoQRFs5cK'),   -- password: heslo
-    (4, 'Suplier', '1', 'suplier@appinvoice.sk', '+421123456789', '', 1, '0', '0', '$2y$10$APNvhwG0IAmOpzey3wT18e0EeEa1JW8WqA5mlr2hZVrauysw8QOaS');         -- password: password
+    (1, 'Admin',      'Admin', 'admin@appinvoice.sk',      '+421123456789', '', 2, '9', '1', '$2y$10$uxc2/nFd86hZhWgtZOJnB.TumsP96M.ObquKLXkCtHbItGhcvA1Qm'),         -- password: admin
+    (2, 'User',       'User',  'user@appinvoice.sk',       '+421123456789', '', 1, '1', '1', '$2y$10$3It6i.h6o.gvcdQCjuPOdOq3kDle11gSxlQFuniJ61e/l5b4IXKV6'),            -- password: password
+    (3, 'Pouzivatel', '1',     'pouzivatel@appinvoice.sk', '+421123456789', '', 3, '1', '1', '$2y$10$ptuTUbF5pa1ohJiLxWjJhuKv7El5p4Fsdqls6p6J.wtHHoQRFs5cK'),   -- password: heslo
+    (4, 'Suplier',    '1',     'suplier@appinvoice.sk',    '+421123456789', '', 1, '1', '1', '$2y$10$APNvhwG0IAmOpzey3wT18e0EeEa1JW8WqA5mlr2hZVrauysw8QOaS');         -- password: password
 
 INSERT INTO `AppInvoice`.`Auto_login` (`id`, `user`, `device`) VALUES
     (1, 2, '2b6a34efeb27a2d5dd3f9bdcf8bf2766871da7c6b413d7bc282b1ac3c5bf650e'),

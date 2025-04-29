@@ -1,7 +1,12 @@
 <?php
 
+include_once __DIR__ . '/../components/settings.php';
+
 function sendBackendRequest($action, $data, $output_log = false) {
-    $server = 'http://localhost/AppInvoice';
+    global $server_url;
+    if(!isset($server_url)) {
+        $server_url = 'http://localhost/AppInvoice';
+    }
 
     $auth = array(
         "device" => "",
@@ -32,7 +37,7 @@ function sendBackendRequest($action, $data, $output_log = false) {
 
     // create post request
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $server . "/Backend/server.php");
+    curl_setopt($ch, CURLOPT_URL, $server_url . "/Backend/server.php");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($request));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -43,7 +48,14 @@ function sendBackendRequest($action, $data, $output_log = false) {
         print_r($response);
     }
 
-    $result = json_decode($response, true);
+    if(!$result = json_decode($response, true)) {
+        $result = array(
+            "status" => "error",
+            "message" => $response
+        );
+    }
+
+    // $result = json_decode($response, true);
     return $result;
 }
 

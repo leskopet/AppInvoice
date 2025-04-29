@@ -1,6 +1,11 @@
 <?php
 
 require_once __DIR__ . '/components/init.php';
+include_once __DIR__ . '/components/settings.php';
+
+if(!isset($server_url)) {
+    $server_url = 'http://localhost/AppInvoice';
+}
 
 if(empty($user['email']) || $user['role'] != 9) {
     header("Location: p_login.php");
@@ -39,7 +44,7 @@ if (isset($_POST['submitRequest'])) {
     $request = array("param" => $form['request']);
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "http://localhost/AppInvoice" . "/Backend/server.php");
+    curl_setopt($ch, CURLOPT_URL, $server_url . "/Backend/server.php");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($request));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

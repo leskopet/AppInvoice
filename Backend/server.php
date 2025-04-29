@@ -7,6 +7,9 @@ header('Access-Control-Allow-Origin: *');
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
 
+// disable error reporting
+error_reporting(0);
+
 // include dependencies
 include_once(__DIR__ . '/globals.php');
 include_once(__DIR__ . '/functions.php');
