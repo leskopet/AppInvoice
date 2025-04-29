@@ -54,7 +54,7 @@ INSERT INTO `AppInvoice`.`Invoice` (`id`, `suplier`, `customer`, `title`, `descr
     (13, 4, 10, '2025001', '', 1000, 230, 1230, 2, '2025-02-06', '2025-02-06', '2025-02-20'),
     (14, 4, 11, '2025002', '', 100,  23,  123,  1, '2025-04-05', '2025-04-05', '2025-04-19');
 
-INSERT INTO `AppInvoice`.`InvoiceItem` (`id`, `invoice`, `title`, `description`, `quantity`, `unit`, `price`) VALUES
+INSERT INTO `AppInvoice`.`Invoice_item` (`id`, `invoice`, `title`, `description`, `quantity`, `unit`, `price`) VALUES
     (1,  1,   'Item1', '', 3,   'kg',  100),
     (2,  1,   'Item2', '', 200, 'm',   2),
     (3,  1,   'Item3', '', 3,   'kg',  100),
