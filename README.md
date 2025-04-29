@@ -37,7 +37,7 @@
   <li>Password: password</li>
 </ul>
 
-<h1>Note!</h1>
-<p>For more information see documentation.docx.</p>
+<h1>Note</h1>
+<p>For more information see documentation.docx</p>
 
 <h2>Enjoy!</h2>
