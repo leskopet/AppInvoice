@@ -26,7 +26,7 @@ $mpdf = new \Mpdf\Mpdf([
     'margin_footer' => 0
 ]);
 $mpdf->WriteHTML($html);
-$mpdf->Output($title . 'pdf', 'I');
+$mpdf->Output($title . '.pdf', 'I');
 // $mpdf->Output('example.pdf', 'D');
 
 ?>
