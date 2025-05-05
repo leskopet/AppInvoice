@@ -38,6 +38,7 @@
 </ul>
 
 <h1>Note</h1>
+<p>Testing of this system has been made in Google Chrome. Other website explorers haven't been tested.</p>
 <p>For more information see Documentation.docx</p>
 
 <h2>Enjoy!</h2>
