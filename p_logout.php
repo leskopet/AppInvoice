@@ -11,6 +11,8 @@ if(!empty($user['email'])) {
     $result = sendBackendRequest($action, $data);
     if($result['status'] == 'success') {
         unset($_SESSION['AppInvoice_user']);
+        unset($_SESSION['AppInvoice_device']);
+        setcookie('AppInvoice_user', '', time() - 3600);
         setcookie('AppInvoice_device', '', time() - 3600);
         header("Location: p_login.php");
         exit();
